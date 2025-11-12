@@ -123,7 +123,7 @@ map.on('load', async () => {
                 .text(`${d.totalTraffic} trips (${d.departures} departures, ${d.arrivals} arrivals)`);
         })
         .style('--departure-ratio', (d) =>
-            stationFlow(d.departures / (d.totalTraffic+0.001)),
+            stationFlow(d.departures / d.totalTraffic),
         );
 
     function updatePositions() {
@@ -175,7 +175,7 @@ map.on('load', async () => {
             .select('title')
             .text((d) => `${d.totalTraffic} trips (${d.departures} departures, ${d.arrivals} arrivals)`)
             .style('--departure-ratio', (d) =>
-                stationFlow(d.departures / (d.totalTraffic+0.001)),
+                stationFlow(d.departures / d.totalTraffic),
             );
     }
 
